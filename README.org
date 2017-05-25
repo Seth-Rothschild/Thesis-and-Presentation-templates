@@ -20,6 +20,8 @@ file, along with some nice Tufts compatable colors
 pre-defined. The template also has examples of basic beamer
 usage and hidden slides.
 
-[[TitleFrame.png][Title Frame]]
+[[file:TitlePage.png]]
+[[file:TitleFrame.png]]
+[[file:QuoteFrame.png]]
 
 
