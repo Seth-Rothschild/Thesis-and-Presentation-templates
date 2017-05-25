@@ -1,0 +1,14 @@
+These are =.tex= templates built from [[http://www.tomrbenson.com/][Tom Benson's]]
+=mytuftsthesis.cls= file and loosely based on the entirety
+of the template which can be found on the [[https://sites.google.com/site/tuftsogsm/resources/latex-tools][Tufts Organization
+of Graduate Students in Mathematics]] website.
+
+The primary change for the thesis template is that I've put
+the entire document in one file. This means that there's
+only one file to save edit and compile, which reduced the
+number of times I tried to compile something with an empty
+header. For navigation, if you're in emacs, you can use 
+=outline-mode= to collapse chapters when you're not working on them.
+
+The presentation template is completely different from
+previous versions and is based on the [[https://github.com/matze/mtheme][Metropolis Theme.]]

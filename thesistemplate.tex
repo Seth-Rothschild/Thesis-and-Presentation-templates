@@ -5,11 +5,11 @@
 \usepackage{thmtools}
 \usepackage{thm-restate}
 
+\declaretheorem[name=Theorem, numberwithin=section]{bigtheorem}
 \pdfpagewidth=8.5in
 \pdfpageheight=11in
 
 \begin{document}
-
 
 \title{Thesis Title}
 \author{Author}
@@ -57,11 +57,19 @@
 % main body of thesis
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Introduction}
+\begin{restatable*}{bigtheorem}{someuniquename}
+\cite[Grothendieck]{EGAI}
+\label{anameforthistheorem}
+  This is an example of theorem restate. I would like to
+  talk about the theorem in chapter 1, but have the
+  numbering from another chapter.
+\end{restatable*}
 \chapter{Background}
 \chapter{Another Chapter}
+\someuniquename
 \renewcommand{\thechapter}{\Alph{chapter}}
 \appendix
-\chapter{Proof of Theorem 1}
+\chapter{Proof of Theorem \ref{anameforthistheorem}}
 
 
 \chapter*{} % The empty chapter prevents the bibliography
