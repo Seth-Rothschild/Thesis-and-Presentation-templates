@@ -1,0 +1,160 @@
+\documentclass{beamer}
+%% +---------------------+ 
+%% | Begin Customization | 
+%% +---------------------+ 
+
+\usetheme[titleformat=smallcaps, numbering=none, block=fill]{metropolis}
+% Metropolis theme is included in texlive2016
+% More info (and a manual!) at https://github.com/matze/mtheme 
+
+% A handy customization guide is 
+% http://www.cpt.univ-mrs.fr/~masson/latex/Beamer-appearance-cheat-sheet.pdf
+
+% The beamer manual can be found at
+% http://www.tuteurs.ens.fr/noncvs/docs/beamer/beameruserguide.pdf
+
+% Here are some nice colors to use
+% Found in Tufts branding guide
+% http://communications.tufts.edu/wp-content/uploads/Tufts_Branding_Guidelines.pdf
+
+\definecolor{classicblue}{RGB}{62,142,222}
+\definecolor{betterblue}{RGB}{49,114,174}
+\definecolor{classicbrown}{RGB}{81,44,29}
+\definecolor{accessibleblue}{RGB}{52,96,148}
+
+\definecolor{extendedgrey}{RGB}{100,100,105}
+\definecolor{extendedorange}{RGB}{243,138,0}
+\definecolor{extendeddarkorange}{RGB}{212,93,0}
+\definecolor{extendedpurple}{RGB}{80,7,120}
+\definecolor{extendedfadedblue}{RGB}{127,169,174}
+\definecolor{extendedteal}{RGB}{0,176,185}
+\definecolor{extendeddarkgreen}{RGB}{86,108,17}
+
+% General beamer colors
+\setbeamercolor*{palette primary}{fg=white,bg=accessibleblue}
+\setbeamercolor*{palette secondary}{fg=white,bg=accessibleblue}
+\setbeamercolor*{palette tertiary}{fg=white,bg=accessibleblue}
+\setbeamercolor*{palette quaternary}{fg=accessibleblue,bg=accessibleblue}
+
+% Define colors for theorem blocks
+%\setbeamercolor{block title}{use=structure,fg=white,bg=extendedteal}
+\setbeamercolor{block body}{parent=normal text,use=block title,bg=block title.bg!10!bg}
+
+% Metropolis specific colors
+\setbeamercolor{normal text}{fg=extendedgrey}
+\setbeamercolor{alerted text}{fg=classicblue}
+\setbeamercolor{example text}{fg=classicblue}
+\setbeamercolor{title separator}{fg=classicblue}
+\setbeamercolor{progress bar in head/foot}{fg=classicblue}
+\setbeamercolor{progress bar in section page}{fg=classicblue}
+
+%% +-----------------------+
+%% |   End Customization   |
+%% +-----------------------+
+
+%% +--------------+
+%% |  Begin Math  |
+%% +--------------+
+ 
+\usepackage{amsmath}  % Standard AMS packages
+\usepackage{amssymb}
+\usepackage{amsbsy}
+
+\usepackage{url}      % Linking slides
+\usepackage{hyperref}
+
+\usepackage{tikz-cd}  % Tikz exact sequences
+\usepackage{appendixnumberbeamer} % Hide slide numbers after appendix
+
+\renewcommand{\thefootnote}{}
+
+\newcommand\scalemath[2]{\scalebox{#1}{\mbox{\ensuremath{\displaystyle #2}}}}
+% Scale large pictures
+
+\newtheorem{proposition}{Proposition}
+\newtheorem{application}{Application}
+
+\title[Title in footer]{Title}
+\author[Name in footer]{Firstname M. Lastname}
+\date[Date in footer]{March 30, 2017}
+\institute[Tufts University]{Tufts University\\Department of Mathematics}
+
+\begin{document}
+\begin{frame}[plain] % No header
+  \frametitle{}
+\titlepage
+\end{frame}
+
+\begin{frame}
+  \frametitle{Quotes}
+ \begin{block}{}
+   {\large ``This is a well sized block quote. The
+     \emph{block body} color is defined above''
+
+     }  \vskip5mm \hspace*\fill{\small---
+     Seth Rothschild}
+ \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Some Tikz}
+  \center{\begin{tikzpicture}
+\draw (0,0) circle (3cm);
+\draw[fill=white] (0,3) circle [radius=0.5] node {0};
+\draw[fill=white] (2.85,0.927) circle [radius=0.5] node {1};
+\draw[fill=white] (1.76,-2.43) circle [radius=0.5] node {2};
+\draw[fill=white] (-1.76,-2.43) circle [radius=0.5] node {3};
+\draw[fill=white] (-2.85,0.927) circle [radius=0.5] node {4};
+  \end{tikzpicture}}
+\end{frame}
+\begin{frame}
+\frametitle{The ``visible'' overlay is nice}
+  You can define \alert{overlays} in beamer 
+
+  \visible<2->{Maybe you want it to preserve spacing}
+
+  \only<3>{Maybe you don't}
+  
+  \invisible<1-3>{Overlays can be applied to all kinds of things}
+\end{frame}
+
+
+\section{The progress bar shows here}
+\begin{frame}
+\label{hiddenslide1-origin}
+\frametitle{Hidden slides}
+  \hyperlink{hiddenslide1}{Notice} that this is the last counted section according to
+  beamer.
+  
+  \begin{enumerate}
+  \item<2-> We've hidden some slides after the end of the
+    talk
+  \item<3-> The word ``\hyperlink{hiddenslide1}{Notice}'' is
+    a link to that slide.
+  \end{enumerate}
+\end{frame}
+\appendix
+
+\begin{frame}
+\visible<1-3>{\titlepage} % Include a couple of titlepages
+                          % to hide hidden slides
+\end{frame}
+\begin{frame}
+  \frametitle{Hidden Slide Index}
+  I found it helpful to have a list of links here
+  \begin{itemize}
+  \item \hyperlink{hiddenslide1}{This is a hidden slide}
+  \end{itemize}
+\end{frame}
+\begin{frame}[label=hiddenslide1]
+
+  \frametitle{This is a hidden slide!}
+  \hyperlink{hiddenslide1-origin}{It} is worthwhile
+  to link back to the origin so you can go back and forth. 
+\end{frame}
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
