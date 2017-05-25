@@ -7,18 +7,23 @@ The primary change for the thesis template is that I've put
 the entire document in one file. This means that there's
 only one file to save edit and compile, which reduced the
 number of times I tried to compile something with an empty
-header. For navigation, if you're in emacs, you can use 
-=outline-mode= to collapse chapters.
+header. For navigation, if you're in emacs, you can use
+=outline-mode= to collapse chapters. To compile the thesis
+you should only need:
++ [[thesistemplate.tex]]
++ [[mytuftsthesis.cls]]
++ [[thesisbib.bib]]
 
 The presentation template is completely different from
 previous versions and is based on the [[https://github.com/matze/mtheme][Metropolis Theme.]]
 Given that most beamer outerthemes [[https://tex.stackexchange.com/questions/357386/how-to-remove-an-extra-hline-in-beamerouterthememiniframes][do not play nicely with
-anti-aliasing]] this is the only viable modern option.
+anti-aliasing]] this is one of the only viable modern options.
 
 I have a short guide to customization in the header of the
 file, along with some nice Tufts compatable colors
 pre-defined. The template also has examples of basic beamer
-usage and hidden slides.
+usage and hidden slides. To compile the presentation you should only need
+[[presentationtemplate.tex]].
 
 [[file:TitlePage.png]]
 [[file:TitleFrame.png]]
