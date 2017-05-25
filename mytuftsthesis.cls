@@ -118,10 +118,12 @@
 \def\mydedication#1{\gdef\@mydedication{#1}}
 
 \def\abstractchapter{
+  \chapter*{Abstract}
   \@myabstract
 }
 
 \def\acknowledgmentschapter{
+  \chapter*{Acknowledgments}
   \@myacknowledgments
 }
 
@@ -136,23 +138,26 @@
   \pdfbookmark{Abstract}{abstract}\abstractchapter
   \clearpage
   \bigskip\noindent\bigskip\@mydedication
-  \newpage
   \pdfbookmark{Acknowledgments}{acknowledgments}\acknowledgmentschapter
   \clearpage
   \pdfbookmark{Contents}{contents}\tableofcontents
+
+% If you don't want a list of tables or figures, comment out
+% the corresponding lines below
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   \clearpage
-  % \phantomsection
-  % \addcontentsline{toc}{chapter}{List of Tables}\listoftables
-  % \clearpage
-  % \setlength{\cftfignumwidth}{3em}
-  % \phantomsection
-  % \addcontentsline{toc}{chapter}{List of Figures}\listoffigures
-  % \clearpage
+  \phantomsection
+  \addcontentsline{toc}{chapter}{List of Tables}\listoftables
+  \clearpage
+  \setlength{\cftfignumwidth}{3em}
+  \phantomsection
+  \addcontentsline{toc}{chapter}{List of
+    Figures}\listoffigures
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   \setcounter{page}{0}
   \pagenumbering{arabic}
   % \noindent\@title
 }
 
 \makeatother
-
 \endinput
