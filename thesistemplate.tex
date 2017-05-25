@@ -1,0 +1,90 @@
+\documentclass[11pt,final,letterpaper,openany]{mytuftsthesis}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\usepackage{thmtools}
+\usepackage{thm-restate}
+
+\pdfpagewidth=8.5in
+\pdfpageheight=11in
+
+\begin{document}
+
+
+\title{Thesis Title}
+\author{Author}
+\adviser{Advisor}
+\institute{Tufts University}
+\degreedate{May 2017}
+\copyrightyear{2017}
+
+\myabstract{ This is the abstract for this thesis. It should
+  be substantially longer than this but not longer than a
+  page. } \myacknowledgments{ Acknowledgments
+  acknowledgments acknowledgments acknowledgments.
+  Acknowledgments acknowledgments, acknowledgments
+  acknowledgments acknowledgments acknowledgments
+  acknowledgments acknowledgments. Acknowledgments
+  acknowledgments acknowledgments acknowledgments:
+  acknowledgments, acknowledgments acknowledgments,
+  acknowledgments acknowledgments, and acknowledgments.
+\newline\newline
+  Acknowledgments acknowledgments acknowledgments
+  acknowledgments acknowledgments. Acknowledgments
+  acknowledgments acknowledgments acknowledgments
+  acknowledgments acknowledgments acknowledgments
+  (acknowledgments acknowledgments) acknowledgments.
+  Acknowledgments acknowledgments acknowledgments
+  acknowledgments acknowledgments acknowledgments
+  acknowledgments acknowledgments acknowledgments
+  acknowledgments. Acknowledgments acknowledgments.
+\newline\newline
+  Acknowledgments acknowledgments acknowledgments
+  acknowledgments acknowledgments acknowledgments. 
+}
+
+\mydedication{
+  \vspace{.5in}
+\begin{center}
+  \emph{To Dedication, without whom this would not have been dedicated.}
+\end{center}
+}
+
+\beforethesisproper
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% main body of thesis
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Introduction}
+\chapter{Background}
+\chapter{Another Chapter}
+\renewcommand{\thechapter}{\Alph{chapter}}
+\appendix
+\chapter{Proof of Theorem 1}
+
+
+\chapter*{} % The empty chapter prevents the bibliography
+            % from being eaten by the appendix if you are
+            % using outline-mode in emacs.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% bibliography
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\bibliographystyle{alpha} 
+                          
+{
+\singlespacing
+\newpage
+\phantomsection
+\addcontentsline{toc}{chapter}{Bibliography}
+\bibliography{thesisbib}
+}
+
+
+\end{document} 
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
